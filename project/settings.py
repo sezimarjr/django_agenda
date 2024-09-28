@@ -120,8 +120,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (
-  
-  BASE_DIR / 'base_static',
+    BASE_DIR / 'base_static',
 )
 
 STATIC_ROOT = BASE_DIR / 'static' #CollectStatic
@@ -133,3 +132,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+try:
+  
+  from project.local_settings import *
+except ImportError:
+  
+  ...
